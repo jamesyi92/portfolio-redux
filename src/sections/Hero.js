@@ -3,6 +3,8 @@ import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import styled from 'styled-components';
 import { device } from '../utils/devices';
 
+import Grid from '../components/Grid';
+import Divider from '../components/Divider';
 import Circle from '../images/circle.inline.svg';
 import Computer from '../images/computer.inline.svg';
 import Phone from '../images/phone.inline.svg';
@@ -21,28 +23,6 @@ const HeroBg = styled(ParallaxLayer)`
 	}
 `
 
-const Divider = styled(ParallaxLayer)`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: ${props => props.layer ? props.layer : 'auto'};
-`
-
-const Grid = styled.div`
-	display: grid;
-	position: relative;
-	width: 100%;
-	grid-template-columns: 1fr;
-	padding: 0 3rem;
-	
-	@media ${device.md} {
-		width: 80%;
-		padding: 0;
-		grid-gap: 3rem;
-		grid-template-columns: repeat(2, 1fr);
-	}
-`
-
 const Content = styled.div`
 	grid-column: 2/3;
 	color: ${props => props.theme.color};
@@ -51,14 +31,12 @@ const Content = styled.div`
 		text-transform: uppercase;
 	}
 `
-
 const StyledComputer = styled(Computer)`
 	grid-column: 1/2;
 	max-width: 100%;
 	width: 80%;
 	height: auto;
 `
-
 
 const StyledPhone = styled(Phone)`
 	transform: translate(-10%, 50%);
@@ -109,7 +87,6 @@ const Hero = () => {
 					</Content>
 				</Grid>
 			</Divider>
-
 
 		</Fragment>
 	)
