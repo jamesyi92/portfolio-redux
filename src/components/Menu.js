@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import { Keyframes, config } from 'react-spring/renderprops';
+import { useTransition, useSpring, useChain, config, animated } from 'react-spring'
 
 const NavButton = styled.div`
   position: fixed;
@@ -60,14 +60,14 @@ const NavButton = styled.div`
   }
 `
 
-const Nav = styled.nav`
+const Nav = styled(animated.nav)`
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 80rem;
-  background: #444444;
+  background: #f2f2f2;
   right: 0;
   top: 0;
   z-index: 998;
@@ -80,11 +80,11 @@ const NavGrid = styled.div`
   width: 80%;
 `
 
-const NavItem = styled.div`
+const NavItem = styled(animated.div)`
   font-size: 3.2rem;
   text-transform: uppercase;
   font-family: Lato, 'sans-serif';
-  color: ${props => props.theme.color};
+  color: ${props => props.theme['color-reverse']};
 `
 
 const items = [
@@ -110,34 +110,6 @@ const items = [
   },
 ]
 
-const Sidebar = Keyframes.Spring({
-  in: async next => {
-    await next({
-      transform: 'translateX(100%)',
-    })
-  },
-  out: async next => {
-    await next({
-      transform: 'translateX(0%)',
-    })
-  }
-})
-
-const SidebarItems = Keyframes.Trail({
-  in: async next => {
-    await next({
-      opacity: 0,
-      transform: 'translateX(40%)',
-    })
-  },
-  out: async next => {
-    await next({
-      opacity: 1,
-      transform: 'translateX(0%)',
-    })
-  }
-})
-
 const Menu = () => {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -146,39 +118,42 @@ const Menu = () => {
     setIsOpen(!isOpen);
   }
 
+  const springRef = useRef();
+  const { size, opacity, ...rest } = useSpring({
+    ref: springRef,
+    config: config.stiff,
+    from: { size: 'translateX(100%)' },
+    to: { size: isOpen ? 'translateX(0%)' : 'translateX(100%)' }
+  })
+
+  const transRef = useRef()
+  const transitions = useTransition(isOpen ? items : [], items => items.title, {
+    ref: transRef,
+    unique: true,
+    trail: 400 / items.length,
+    from: { opacity: 0, transform: 'translateX(40px)' },
+    enter: { opacity: 1, transform: 'translateX(0px)' },
+    leave: { opacity: 0, transform: 'translateX(40px)' }
+  })
+
+  useChain(isOpen ? [springRef, transRef] : [transRef, springRef], [0, isOpen ? 0.1 : 0.6]);
+
   return(
     <header>
       <NavButton onClick={() => menuToggle()}>
         <span className={ isOpen ? 'open' : 'closed' }></span>
       </NavButton>
 
-      <Sidebar
-        config={config.velocity}
-        unique
-        state={isOpen ? 'out' : 'in'}
-      >
-        {
-          props => (
-            <Nav style={props}>
-              <NavGrid>
-                <SidebarItems
-                  keys={item => item.key}
-                  items={items}
-                  state={isOpen ? 'out' : 'in'}
-                >
-                  {
-                    item => props => {
-                      return (
-                        <NavItem style={props}>{item.title}</NavItem>
-                      )
-                    }
-                  }
-                </SidebarItems>
-              </NavGrid>
-            </Nav>
-          )
-        }
-      </Sidebar>
+      <Nav style={{ ...rest, transform: size }} >
+        <NavGrid>
+          {transitions.map(({ item, key, props }) => (
+            <NavItem key={ key } style={ props }>
+              { item.title }
+            </NavItem>
+          ))}
+        </NavGrid>
+      </Nav>
+
     </header>
   )
 }
