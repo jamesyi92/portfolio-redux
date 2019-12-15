@@ -11,7 +11,6 @@ import Phone from '../images/phone.inline.svg';
 import Blob from '../images/hero-blob.inline.svg';
 
 const HeroBg = styled(ParallaxLayer)`
-	overflow: hidden;
 	z-index: 1;
 
 	svg {
@@ -78,7 +77,7 @@ const Hero = () => {
 				</Grid>
 			</Divider>
 
-			<Divider offset={0} factor={1} speed={.8} layer={3}>
+			<Divider offset={0} factor={1} speed={.8} layer={4}>
 				<Grid>
 					<Content>
 						<h1>James Yi</h1>

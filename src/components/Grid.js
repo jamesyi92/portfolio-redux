@@ -9,10 +9,10 @@ const Grid = styled.div`
 	padding: 0 3rem;
 	
 	@media ${device.md} {
-		width: 80%;
+		width: ${props => props.container ? props.container : '80'}%;
 		padding: 0;
 		grid-gap: 3rem;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(${props => props.gridCol ? props.gridCol : '2'}, 1fr);
 	}
 `
 export default Grid;
