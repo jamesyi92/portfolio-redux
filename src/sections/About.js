@@ -102,14 +102,7 @@ const About = () => {
 
 	return(
 		<Fragment>
-
 			<Bg offset={1} factor={1} speed={.3} />
-
-			<Divider offset={1} factor={1} speed={.6} layer={0}>
-				<Grid>
-					
-				</Grid>
-			</Divider>
 
 			<Wave1Layer offset={1} speed={.1} factor={1.1}>
 				<Wave1 />
@@ -128,7 +121,6 @@ const About = () => {
 					</Content>
 				</Grid>
 			</Divider>
-
 		</Fragment>
 	)
 }

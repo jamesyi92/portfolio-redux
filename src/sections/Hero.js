@@ -8,12 +8,12 @@ import Divider from '../components/Divider';
 import Circle from '../images/circle.inline.svg';
 import Computer from '../images/computer.inline.svg';
 import Phone from '../images/phone.inline.svg';
+import Browser from '../images/browser.inline.svg';
+import Rocket from '../images/rocket.inline.svg';
 
 const HeroBg = styled(ParallaxLayer)`
 	z-index: 1;
-	background: linear-gradient(to right, ${props => props.theme.primary}, ${props => props.theme.primary} 45%, #ffffff 45%);
-
-
+	background: linear-gradient(to right, ${props => props.theme['background-3']}, ${props => props.theme['background-3']} 45%, #ffffff 45%);
 `
 
 const Content = styled.div`
@@ -39,26 +39,57 @@ const StyledPhone = styled(Phone)`
 	height: auto;
 `
 
+const StyledBrowser = styled(Browser)`
+	transform: translate(90%, 70%);
+	grid-column: 1/2;
+	max-width: 100%;
+	width: 40%;
+	height: auto;
+`
+
+const StyledRocket = styled(Rocket)`
+	position: absolute;
+	right: 3rem;
+	bottom: 0;
+	grid-column: 2/-1;
+	max-width: 100%;
+	width: 10rem;
+	height: auto;
+`
+
 
 const Hero = () => {
 	return(
 		<Fragment>
 
-			<HeroBg offset={0} factor={1.3} speed={.3} />
+			<HeroBg offset={0} factor={1.3} speed={0} />
 
-			<Divider offset={0} factor={1} speed={.5} layer={1}>
+			<Divider offset={0} factor={1} speed={.9} layer={1}>
 				<Grid>
 					<StyledComputer />
 				</Grid>
 			</Divider>
 
-			<Divider offset={0} factor={1} speed={.4} layer={2}>
+			<Divider offset={0} factor={1} speed={1.2} layer={2}>
 				<Grid>
 					<StyledPhone />
 				</Grid>
 			</Divider>
 
-			<Divider offset={0} factor={1} speed={.8} layer={4}>
+			<Divider offset={0} factor={1} speed={.6} layer={3}>
+				<Grid>
+					<StyledBrowser />
+				</Grid>
+			</Divider>
+
+			<Divider offset={0.5} factor={1} speed={1.3} layer={5}>
+				<Grid>
+					<StyledRocket />
+				</Grid>
+			</Divider>
+
+
+			<Divider offset={0} factor={1} speed={.4} layer={4}>
 				<Grid>
 					<Content>
 						<h1>James Yi</h1>
