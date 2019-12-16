@@ -13,14 +13,21 @@ import Wave2 from '../images/wave-2.inline.svg';
 
 const Bg = styled(ParallaxLayer)`
 	overflow: hidden;
-	z-index: 1;
+	z-index: 2;
 	background: linear-gradient(125deg, #5f51fb 0%, #767cfd 64%, #8ca7ff 100%);
 `
 
 const Content = styled.div`
 	grid-column: 1/2;
-	color: ${props => props.theme.color};
 	text-align: center;
+
+	h2, p {
+		color: ${props => props.theme.color};
+	}
+
+	p {
+		opacity: .8;
+	}
 `
 
 const animateWave1 = keyframes`
@@ -44,7 +51,7 @@ const animateWave2 = keyframes`
 const Wave1Layer = styled(ParallaxLayer)`
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	z-index: 2;
 
 	svg {
 		position: absolute;
@@ -61,7 +68,7 @@ const Wave1Layer = styled(ParallaxLayer)`
 const Wave2Layer = styled(ParallaxLayer)`
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	z-index: 2;
 	display: none;
 
 	@media ${device.lg} {

@@ -5,7 +5,7 @@ import { device } from '../utils/devices';
 
 import Grid from '../components/Grid';
 import Divider from '../components/Divider';
-import Circle from '../images/circle.inline.svg';
+
 import Computer from '../images/computer.inline.svg';
 import Phone from '../images/phone.inline.svg';
 import Browser from '../images/browser.inline.svg';

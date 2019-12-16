@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
+import { useSpring, animated, config } from 'react-spring';
 import styled from 'styled-components';
 import { device } from '../utils/devices';
 
@@ -9,7 +10,7 @@ import Divider from '../components/Divider';
 import Container from '../components/Container';
 import WorkItem from '../components/WorkItem';
 
-import Phone from '../images/phone-2.inline.svg';
+import BackgroundImage from 'gatsby-background-image';
 
 import SterlingLogo from '../images/sterling-logo.inline.svg';
 
@@ -17,7 +18,13 @@ import SterlingLogo from '../images/sterling-logo.inline.svg';
 const Bg = styled(ParallaxLayer)`
 	overflow: hidden;
 	z-index: 1;
-	background: linear-gradient(to bottom, ${props => props.theme.color}, ${props => props.theme['background-3']});
+	background: ${props => props.theme.primary};
+`
+
+const Content = styled.div`
+	grid-column: 1/2;
+	color: ${props => props.theme['color-reverse']};
+	text-align: center;
 `
 
 const WorkGrid = styled.div`
@@ -28,6 +35,8 @@ const WorkGrid = styled.div`
 `
 
 const Intro = styled.div`
+	
+	text-align: center;
 
 	h2 {
 		font-size: 4.2rem;
@@ -35,32 +44,15 @@ const Intro = styled.div`
 	}
 
 	p {
-		font-size: 1.8rem;
 		margin-bottom: 3rem;
 	}
 `
 
-const StyledPhone = styled(Phone)`
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 35rem;
-	height: auto;
-	transform: rotate(45deg) translateX(70%);
-`
-
-const Work = () => {
+const Sandbox = () => {
 
 	const data = useStaticQuery(graphql`
-    query ImagesQuery {
+    query SandboxImagesQuery {
       sterlingImage: file(relativePath: { eq: "sterling.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      visierImage: file(relativePath: { eq: "test.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
@@ -82,7 +74,7 @@ const Work = () => {
 			title: 'Sterling',
 			description: 'Corporate Website',
 			logo: <SterlingLogo />,
-			img: data.visierImage.childImageSharp.fluid,
+			img: data.sterlingImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
@@ -117,15 +109,15 @@ const Work = () => {
 
 	return(
 		<Fragment>
-			<Bg offset={2} factor={1} speed={.3} />
+			<Bg offset={3} factor={1} speed={.3} />
 
-			<Divider offset={1.35} factor={1} speed={-.3} layer={3}>
+			<Divider offset={3} factor={1} speed={.6} layer={0}>
 				<Grid>
-					<StyledPhone />
+					
 				</Grid>
 			</Divider>
 
-			<Divider offset={2} factor={1} speed={.8} layer={3}>
+			<Divider offset={3} factor={1} speed={.8} layer={3}>
 				<Container>
 					<Intro>
 						<h2>My Work</h2>
@@ -155,4 +147,4 @@ const Work = () => {
 	)
 }
 
-export default Work;
+export default Sandbox;

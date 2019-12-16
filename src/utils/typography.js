@@ -5,7 +5,7 @@ const typography = new Typography({
   baseLineHeight: 1.6,
   googleFonts: [
     {
-      name: 'Lato',
+      name: 'Noto Sans JP',
       styles: ['700'],
     },
     {
@@ -16,14 +16,14 @@ const typography = new Typography({
   headerWeight: 700,
   bodyWeight: 400,
   boldWeight: 700,
-  headerFontFamily: ['Lato', 'sans-serif'],
+  headerFontFamily: ['Noto Sans JP', 'sans-serif'],
   bodyFontFamily: ['Roboto', 'sans-serif'],
   overrideStyles: ({ rhythm }, options, styles) => ({
     'h1': {
       'fontSize': '7.2rem'
     },
     'h2': {
-      'fontSize': '3.2rem'
+      'fontSize': '4.2rem',
     },
     'h3': {
       'fontSize': '2.4rem'
@@ -32,7 +32,8 @@ const typography = new Typography({
       'fontSize': '1.8rem'
     },
     'p': {
-      'fontSize': '1.6rem'
+      'fontSize': '1.6rem',
+      'color' : '#888888'
     }
   }),
 })
