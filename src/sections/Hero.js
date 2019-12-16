@@ -8,23 +8,17 @@ import Divider from '../components/Divider';
 import Circle from '../images/circle.inline.svg';
 import Computer from '../images/computer.inline.svg';
 import Phone from '../images/phone.inline.svg';
-import Blob from '../images/hero-blob.inline.svg';
 
 const HeroBg = styled(ParallaxLayer)`
 	z-index: 1;
+	background: linear-gradient(to right, ${props => props.theme.primary}, ${props => props.theme.primary} 45%, #ffffff 45%);
 
-	svg {
-		position: absolute;
-		right: -45%;
-		top: 50%;
-		transform: translateY(-50%);
-		max-width: 100%;
-	}
+
 `
 
 const Content = styled.div`
 	grid-column: 2/3;
-	color: ${props => props.theme.color};
+	color: ${props => props.theme['color-reverse']};
 
 	h1,h2, p {
 		text-transform: uppercase;
@@ -45,25 +39,12 @@ const StyledPhone = styled(Phone)`
 	height: auto;
 `
 
-const StyledBlob = styled(Blob)`
-	grid-column: 1/2;
-	max-width: 100%;
-	height: auto;
-`
 
 const Hero = () => {
 	return(
 		<Fragment>
 
-			<HeroBg offset={0} factor={1} speed={.3}>
-				<Circle />
-			</HeroBg>
-
-			<Divider offset={0} factor={1} speed={.6} layer={0}>
-				<Grid>
-					<StyledBlob />
-				</Grid>
-			</Divider>
+			<HeroBg offset={0} factor={1.3} speed={.3} />
 
 			<Divider offset={0} factor={1} speed={.5} layer={1}>
 				<Grid>

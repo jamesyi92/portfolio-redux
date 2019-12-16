@@ -66,7 +66,7 @@ const Nav = styled(animated.nav)`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 80rem;
+  width: 50%;
   background: #f2f2f2;
   right: 0;
   top: 0;
