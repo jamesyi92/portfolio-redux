@@ -83,7 +83,7 @@ const NavGrid = styled.div`
 const NavItem = styled(animated.div)`
   font-size: 3.2rem;
   text-transform: uppercase;
-  font-family: Lato, 'sans-serif';
+  font-family: Noto Sans JP, 'sans-serif';
   color: ${props => props.theme['color-reverse']};
 `
 

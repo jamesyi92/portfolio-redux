@@ -111,8 +111,8 @@ const WorkItem = ({ title, description, logo, img, background }) => {
 			onMouseLeave={ () => toggle(!open) }
 			background={ background }
 		>
-			<CircleOverlay native style={ circleProps } />
-			<Overlay native style={ overlayProps }>
+			<CircleOverlay style={ circleProps } />
+			<Overlay style={ overlayProps }>
 				<h3>{ title }</h3>
 				<p>{ description }</p>
 			</Overlay>

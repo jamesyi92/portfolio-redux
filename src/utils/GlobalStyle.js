@@ -26,6 +26,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 62.5%;
     }
 
+    @media ${device.xxl} { 
+        font-size: 75%;
+    }
+
   }
 
 `

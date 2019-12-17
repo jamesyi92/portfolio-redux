@@ -5,6 +5,7 @@ import { device } from '../utils/devices';
 
 import Grid from '../components/Grid';
 import Divider from '../components/Divider';
+import Container from '../components/Container';
 
 import Computer from '../images/computer.inline.svg';
 import Phone from '../images/phone.inline.svg';
@@ -65,38 +66,48 @@ const Hero = () => {
 			<HeroBg offset={0} factor={1.3} speed={0} />
 
 			<Divider offset={0} factor={1} speed={.9} layer={1}>
-				<Grid>
-					<StyledComputer />
-				</Grid>
+				<Container>
+					<Grid>
+						<StyledComputer />
+					</Grid>
+				</Container>
 			</Divider>
 
 			<Divider offset={0} factor={1} speed={1.2} layer={2}>
-				<Grid>
-					<StyledPhone />
-				</Grid>
+				<Container>
+					<Grid>
+						<StyledPhone />
+					</Grid>
+				</Container>
 			</Divider>
 
 			<Divider offset={0} factor={1} speed={.6} layer={3}>
-				<Grid>
-					<StyledBrowser />
-				</Grid>
+				<Container>
+					<Grid>
+						<StyledBrowser />
+					</Grid>
+				</Container>
 			</Divider>
 
 			<Divider offset={0.5} factor={1} speed={1.3} layer={5}>
-				<Grid>
-					<StyledRocket />
-				</Grid>
+				<Container>
+					<Grid>
+						<StyledRocket />
+					</Grid>
+				</Container>
 			</Divider>
 
 
-			<Divider offset={0} factor={1} speed={.4} layer={4}>
-				<Grid>
-					<Content>
-						<h1>James Yi</h1>
-						<h2>Front-End Developer</h2>
-						<p>Based in Vancouver BC</p>
-					</Content>
-				</Grid>
+			<Divider offset={0} factor={1} speed={.4} layer={6}>
+				<Container>
+					<Grid>
+						<Content>
+							<h1>James Yi</h1>
+							<h2>Front-End Developer</h2>
+							<p>Based in Vancouver BC</p>
+						</Content>
+					</Grid>
+				</Container>
 			</Divider>
 
 		</Fragment>

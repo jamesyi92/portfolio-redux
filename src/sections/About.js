@@ -7,6 +7,7 @@ import { device } from '../utils/devices';
 
 import Grid from '../components/Grid';
 import Divider from '../components/Divider';
+import Container from '../components/Container';
 
 import Wave1 from '../images/wave-1.inline.svg';
 import Wave2 from '../images/wave-2.inline.svg';
@@ -20,6 +21,8 @@ const Bg = styled(ParallaxLayer)`
 const Content = styled.div`
 	grid-column: 1/2;
 	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 
 	h2, p {
 		color: ${props => props.theme.color};
@@ -119,14 +122,16 @@ const About = () => {
 				<Wave2 />
 			</Wave2Layer>
 
-			<Divider offset={1} factor={1} speed={.8} layer={3}>
-				<Grid gridCol={1} container="40">
-					<Content>
-						<ProfileImage fluid={data.aboutImage.childImageSharp.fluid} />
-						<h2>Hi, I'm James</h2>
-						<p>I'm a front-end developer based in Vancouver. I have been in the industry for over 4 years of building custom-tailored digital experiences for companies with technologies like WordPress, React and Gatsby. I live and breathe HTML/CSS/Javascript, with having a fierce passion of bringing UI/UX concepts to life.</p>
-					</Content>
-				</Grid>
+			<Divider offset={1} factor={1} speed={.8} layer={6}>
+				<Container>
+					<Grid gridCol={1}>
+						<Content>
+							<ProfileImage fluid={data.aboutImage.childImageSharp.fluid} />
+							<h2>Hi, I'm James</h2>
+							<p>I'm a front-end developer based in Vancouver. I have been in the industry for over 4 years of building custom-tailored digital experiences for companies with technologies like WordPress, React and Gatsby. I live and breathe HTML/CSS/Javascript, with having a fierce passion of bringing UI/UX concepts to life.</p>
+						</Content>
+					</Grid>
+				</Container>
 			</Divider>
 		</Fragment>
 	)

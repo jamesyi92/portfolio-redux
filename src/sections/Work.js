@@ -120,9 +120,11 @@ const Work = () => {
 			<Bg offset={2} factor={1} speed={.3} />
 
 			<Divider offset={1.35} factor={1} speed={-.3} layer={3}>
-				<Grid>
-					<StyledPhone />
-				</Grid>
+				<Container>
+					<Grid>
+						<StyledPhone />
+					</Grid>
+				</Container>
 			</Divider>
 
 			<Divider offset={2} factor={1} speed={.8} layer={3}>
