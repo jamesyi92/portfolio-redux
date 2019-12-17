@@ -12,27 +12,6 @@ import Container from '../components/Container';
 import Wave1 from '../images/wave-1.inline.svg';
 import Wave2 from '../images/wave-2.inline.svg';
 
-const Bg = styled(ParallaxLayer)`
-	overflow: hidden;
-	z-index: 2;
-	background: linear-gradient(125deg, #5f51fb 0%, #767cfd 64%, #8ca7ff 100%);
-`
-
-const Content = styled.div`
-	grid-column: 1/2;
-	text-align: center;
-	width: 70%;
-	margin: 0 auto;
-
-	h2, p {
-		color: ${props => props.theme.color};
-	}
-
-	p {
-		opacity: .8;
-	}
-`
-
 const animateWave1 = keyframes`
 	0% {
     transform: scale(1, .6);
@@ -51,44 +30,49 @@ const animateWave2 = keyframes`
   }
 `
 
-const Wave1Layer = styled(ParallaxLayer)`
-	width: 100%;
-	height: 100%;
-	z-index: 2;
 
-	svg {
-		position: absolute;
-		bottom: 10%;
-		max-width: 100%;
-		width: 100%;
-		bottom: 0;
+const StyledWave1 = styled(Wave1)`
+	position: absolute;
+	z-index: 3;
+	max-width: 100%;
+	width: 100%;
+	bottom: -8rem;
+	opacity: 1;
+	transform-origin: bottom;
+	animation: ${animateWave1} 8s ease-in-out -8s infinite alternate forwards running;
+`
+
+const StyledWave2 = styled(Wave2)`
+	position: absolute;
+	max-width: 100%;
+	width: 100%;
+	bottom: -6rem;
+	opacity: .3;
+	transform-origin: bottom;
+	animation: ${animateWave2} 8s ease-in-out -8s infinite alternate forwards running;
+`
+
+const Bg = styled(ParallaxLayer)`
+	overflow: hidden;
+	z-index: 2;
+	background: linear-gradient(125deg, ${props => props.theme.primary} 0%, #767cfd 64%, #4d8ce4 100%);
+`
+
+const Content = styled.div`
+	grid-column: 1/2;
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+
+	h2, p {
+		color: ${props => props.theme.color};
+	}
+
+	p {
 		opacity: .8;
-		transform-origin: bottom;
-		animation: ${animateWave1} 8s ease-in-out -8s infinite alternate forwards running;
 	}
 `
 
-const Wave2Layer = styled(ParallaxLayer)`
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	display: none;
-
-	@media ${device.lg} {
-		display: block;
-	}
-
-	svg {
-		position: absolute;
-		bottom: 10%;
-		max-width: 100%;
-		width: 100%;
-		bottom: 0;
-		opacity: .3;
-		transform-origin: bottom;
-		animation: ${animateWave2} 8s ease-in-out -8s infinite alternate forwards running;
-	}
-`
 const ProfileImage = styled(Img)`
 	max-width: 100%;
 	width: 22rem;
@@ -111,16 +95,16 @@ const About = () => {
   `)
 
 	return(
-		<Fragment>
-			<Bg offset={1} factor={1} speed={.3} />
+		<section>
+			<Bg offset={1} factor={1} speed={.3}>
 
-			<Wave1Layer offset={1} speed={.1} factor={1.1}>
-				<Wave1 />
-			</Wave1Layer>
 
-			<Wave2Layer offset={1} speed={.3} factor={1.1}>
-				<Wave2 />
-			</Wave2Layer>
+				<StyledWave1 />
+
+				<StyledWave2 />
+
+
+			</Bg>
 
 			<Divider offset={1} factor={1} speed={.8} layer={6}>
 				<Container>
@@ -133,7 +117,7 @@ const About = () => {
 					</Grid>
 				</Container>
 			</Divider>
-		</Fragment>
+		</section>
 	)
 }
 

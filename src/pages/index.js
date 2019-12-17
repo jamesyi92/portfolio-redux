@@ -7,7 +7,7 @@ import Work from '../sections/Work';
 
 const IndexPage = ({ parallax }) => (
   <Layout>
-    <Parallax pages={4.1} ref={ref => (parallax = ref)}>
+    <Parallax pages={3} ref={ref => (parallax = ref)}>
 		  <Hero />
 		  <About />
 		  <Work />

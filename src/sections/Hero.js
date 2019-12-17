@@ -61,7 +61,7 @@ const StyledRocket = styled(Rocket)`
 
 const Hero = () => {
 	return(
-		<Fragment>
+		<section>
 
 			<HeroBg offset={0} factor={1.3} speed={0} />
 
@@ -110,7 +110,7 @@ const Hero = () => {
 				</Container>
 			</Divider>
 
-		</Fragment>
+		</section>
 	)
 }
 

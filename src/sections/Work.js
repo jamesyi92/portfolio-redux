@@ -10,14 +10,19 @@ import Container from '../components/Container';
 import WorkItem from '../components/WorkItem';
 
 import Phone from '../images/phone-2.inline.svg';
+import Blob from '../images/blob.inline.svg';
 
 import SterlingLogo from '../images/sterling-logo.inline.svg';
+import VisierLogo from '../images/visier-logo.inline.svg';
+import SVLogo from '../images/sv-logo.inline.svg';
+import SnowLogo from '../images/snow-logo.inline.svg';
 
 
 const Bg = styled(ParallaxLayer)`
 	overflow: hidden;
 	z-index: 1;
-	background: linear-gradient(to bottom, ${props => props.theme.color}, ${props => props.theme['background-3']});
+	//background: linear-gradient(to bottom, ${props => props.theme.color}, ${props => props.theme['background-3']});
+	background: ${props => props.theme.color};
 `
 
 const WorkGrid = styled.div`
@@ -50,15 +55,14 @@ const Intro = styled.div`
 	}
 `
 
-const StyledPhone = styled(Phone)`
+const StyledBlob = styled(Blob)`
 	position: absolute;
-	right: 0;
+	left: 0;
 	top: 0;
-	width: 35rem;
+	width: 45rem;
 	height: auto;
-	transform: rotate(45deg) translateX(70%);
+	transform: rotate(45deg);
 `
-
 const Work = () => {
 
 	const data = useStaticQuery(graphql`
@@ -70,7 +74,28 @@ const Work = () => {
           }
         }
       }
-      visierImage: file(relativePath: { eq: "test.jpg" }) {
+      visierImage: file(relativePath: { eq: "visier.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      volImage: file(relativePath: { eq: "sterlingvolunteers.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      snowImage: file(relativePath: { eq: "sterlingnow.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      apiImage: file(relativePath: { eq: "sterlingapi.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
@@ -86,20 +111,19 @@ const Work = () => {
 			description: 'Corporate Website',
 			logo: <SterlingLogo />,
 			img: data.sterlingImage.childImageSharp.fluid,
-			background: '#ffffff'
 		},
 		{
 			title: 'Visier',
 			description: 'Corporate Website',
-			logo: <SterlingLogo />,
+			logo: <VisierLogo />,
 			img: data.visierImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
 			title: 'Sterling Volunteers',
 			description: 'Corporate Website',
-			logo: <SterlingLogo />,
-			img: data.sterlingImage.childImageSharp.fluid,
+			logo: <SVLogo />,
+			img: data.volImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
@@ -112,27 +136,27 @@ const Work = () => {
 		{
 			title: 'SterlingNOW',
 			description: 'Adwords Landing Page',
-			logo: <SterlingLogo />,
-			img: data.sterlingImage.childImageSharp.fluid,
+			logo: <SnowLogo />,
+			img: data.snowImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
 			title: 'Sterling API',
 			description: 'API Product Website',
 			logo: <SterlingLogo />,
-			img: data.sterlingImage.childImageSharp.fluid,
+			img: data.apiImage.childImageSharp.fluid,
 			background: '#ffffff'
 		}
 	]
 
 	return(
-		<Fragment>
+		<section>
 			<Bg offset={2} factor={1} speed={.3} />
 
-			<Divider offset={1.35} factor={1} speed={-.3} layer={3}>
+			<Divider offset={1.35} factor={1} speed={-.3} layer={1}>
 				<Container>
 					<Grid>
-						<StyledPhone />
+						<StyledBlob />
 					</Grid>
 				</Container>
 			</Divider>
@@ -163,7 +187,7 @@ const Work = () => {
 					</WorkGrid>
 				</Container>
 			</Divider>
-		</Fragment>
+		</section>
 	)
 }
 
