@@ -22,9 +22,19 @@ const Bg = styled(ParallaxLayer)`
 
 const WorkGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: auto auto;
 	grid-gap: 3rem;
+	grid-template-columns: 1fr;
+
+	@media ${device.md} {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto auto auto;
+	}
+
+	@media ${device.lg} {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto;
+	}
+
 `
 
 const Intro = styled.div`
@@ -79,36 +89,36 @@ const Work = () => {
 			background: '#ffffff'
 		},
 		{
-			title: 'Sterling',
+			title: 'Visier',
 			description: 'Corporate Website',
 			logo: <SterlingLogo />,
 			img: data.visierImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
-			title: 'Sterling',
+			title: 'Sterling Volunteers',
 			description: 'Corporate Website',
 			logo: <SterlingLogo />,
 			img: data.sterlingImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
-			title: 'Sterling',
+			title: 'Sterling Diligence',
 			description: 'Corporate Website',
 			logo: <SterlingLogo />,
 			img: data.sterlingImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
-			title: 'Sterling',
-			description: 'Corporate Website',
+			title: 'SterlingNOW',
+			description: 'Adwords Landing Page',
 			logo: <SterlingLogo />,
 			img: data.sterlingImage.childImageSharp.fluid,
 			background: '#ffffff'
 		},
 		{
-			title: 'Sterling',
-			description: 'Corporate Website',
+			title: 'Sterling API',
+			description: 'API Product Website',
 			logo: <SterlingLogo />,
 			img: data.sterlingImage.childImageSharp.fluid,
 			background: '#ffffff'

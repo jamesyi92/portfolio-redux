@@ -16,6 +16,14 @@ const NavButton = styled.div`
   height: 5rem;
   cursor: pointer;
 
+  &:hover {
+    span,
+    span::before,
+    span::after {
+      background-color: ${props => props.theme.primary};
+    }
+  }
+
   span {
 
     position: relative;
@@ -27,6 +35,7 @@ const NavButton = styled.div`
         height: 2px;
         background-color: #212121;
         display: inline-block;
+        transition: all ease-in-out .2s;
     }
 
     &::before,
@@ -34,7 +43,6 @@ const NavButton = styled.div`
         content: "";
         position: absolute;
         left: 0;
-        transition: all .2s;
     }
 
     &::before { top: -6px; }

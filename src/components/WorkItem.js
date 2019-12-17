@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { device } from '../utils/devices';
 
 import BackgroundImage from 'gatsby-background-image';
+import Button from '../components/Button';
 
 const Work = styled.div`
 	overflow: hidden;
@@ -14,7 +15,7 @@ const Work = styled.div`
 	padding: 3rem;
 	height: 25rem;
 	border-radius: 6px;
-	box-shadow: 0px 20px 60px 0px rgba(0,11,40,0.06);
+	box-shadow: 0 0 2rem rgba(0,0,0,.1);
 	z-index: 1;
 
 	svg {
@@ -31,7 +32,7 @@ const Work = styled.div`
 		top: 0;
 		left: 0;
 		background: ${props => props.background ? props.background : props.theme.primary };
-		opacity: .7;
+		opacity: .65;
 		border-radius: 6px;
 	}
 `
@@ -68,7 +69,7 @@ const Overlay = styled(animated.div)`
 
 	p {
 		color: ${props => props.theme.color};
-		margin-bottom: 0;
+		margin-bottom: 1.5rem;
 	}
 `
 
@@ -115,6 +116,7 @@ const WorkItem = ({ title, description, logo, img, background }) => {
 			<Overlay style={ overlayProps }>
 				<h3>{ title }</h3>
 				<p>{ description }</p>
+				<Button>See More</Button>
 			</Overlay>
 			{ logo }
 			<StyledImg fluid={ img } />
