@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { device } from '../utils/devices';
 
 import Grid from '../components/Grid';
@@ -11,6 +11,7 @@ import WorkItem from '../components/WorkItem';
 
 import Phone from '../images/phone-2.inline.svg';
 import Blob from '../images/blob.inline.svg';
+import Blob2 from '../images/blob-2.inline.svg';
 
 import SterlingLogo from '../images/sterling-logo.inline.svg';
 import VisierLogo from '../images/visier-logo.inline.svg';
@@ -55,14 +56,33 @@ const Intro = styled.div`
 	}
 `
 
+const floatAnimation = keyframes`
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: rotate(5deg) translateY(3rem);
+  }
+`
+
 const StyledBlob = styled(Blob)`
 	position: absolute;
-	left: 0;
-	top: 0;
-	width: 45rem;
+	left: -10%;
+	top: 35%;
+	width: 75rem;
 	height: auto;
-	transform: rotate(45deg);
+	animation: ${floatAnimation} 8s ease-in-out infinite alternate;
 `
+
+const StyledBlob2 = styled(Blob2)`
+	position: absolute;
+	right: 5%;
+	top: 30%;
+	width: 50rem;
+	height: auto;
+	animation: ${floatAnimation} 6s ease-in-out infinite alternate;
+`
+
 const Work = () => {
 
 	const data = useStaticQuery(graphql`
@@ -154,11 +174,11 @@ const Work = () => {
 			<Bg offset={2} factor={1} speed={.3} />
 
 			<Divider offset={1.35} factor={1} speed={-.3} layer={1}>
-				<Container>
-					<Grid>
-						<StyledBlob />
-					</Grid>
-				</Container>
+				<StyledBlob />
+			</Divider>
+
+			<Divider offset={2} factor={1} speed={-.5} layer={1}>
+				<StyledBlob2 />
 			</Divider>
 
 			<Divider offset={2} factor={1} speed={.8} layer={3}>
