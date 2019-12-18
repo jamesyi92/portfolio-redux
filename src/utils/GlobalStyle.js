@@ -4,8 +4,8 @@ import { device } from './devices'
 export const GlobalStyle = createGlobalStyle`
 
 	html {
-		overflow-y: auto;
-	  box-sizing: border-box;
+	   overflow-y: auto;
+	   box-sizing: border-box;
 	}
 
 	*,

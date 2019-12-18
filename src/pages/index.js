@@ -8,7 +8,7 @@ import Sandbox from '../sections/Sandbox';
 
 const IndexPage = ({ parallax }) => (
   <Layout>
-    <Parallax pages={4} ref={ref => (parallax = ref)}>
+    <Parallax pages={5} ref={ref => (parallax = ref)}>
 		  <Hero />
 		  <About />
 		  <Work />
