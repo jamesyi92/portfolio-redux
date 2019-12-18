@@ -33,7 +33,6 @@ const animateWave2 = keyframes`
 
 const StyledWave1 = styled(Wave1)`
 	position: absolute;
-	z-index: 3;
 	max-width: 100%;
 	width: 100%;
 	bottom: -8rem;
@@ -46,7 +45,7 @@ const StyledWave2 = styled(Wave2)`
 	position: absolute;
 	max-width: 100%;
 	width: 100%;
-	bottom: -6rem;
+	bottom: -9rem;
 	opacity: .3;
 	transform-origin: bottom;
 	animation: ${animateWave2} 8s ease-in-out -8s infinite alternate forwards running;
@@ -96,15 +95,15 @@ const About = () => {
 
 	return(
 		<section>
-			<Bg offset={1} factor={1} speed={.3}>
+			<Bg offset={1} factor={1} speed={.3} />
 
-
+			<Divider offset={1} factor={1} speed={.2} layer={2}>
 				<StyledWave1 />
+			</Divider>
 
+			<Divider offset={1} factor={1} speed={.3} layer={2}>
 				<StyledWave2 />
-
-
-			</Bg>
+			</Divider>
 
 			<Divider offset={1} factor={1} speed={.8} layer={6}>
 				<Container>

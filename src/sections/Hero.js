@@ -50,9 +50,8 @@ const StyledBrowser = styled(Browser)`
 
 const StyledRocket = styled(Rocket)`
 	position: absolute;
-	right: 3rem;
+	right: 15%;
 	bottom: 0;
-	grid-column: 2/-1;
 	max-width: 100%;
 	width: 10rem;
 	height: auto;
@@ -90,11 +89,7 @@ const Hero = () => {
 			</Divider>
 
 			<Divider offset={0.5} factor={1} speed={1.3} layer={5}>
-				<Container>
-					<Grid>
-						<StyledRocket />
-					</Grid>
-				</Container>
+				<StyledRocket />
 			</Divider>
 
 

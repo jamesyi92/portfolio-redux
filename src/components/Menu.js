@@ -122,7 +122,7 @@ const Menu = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuToggle = () => {;
+  const menuToggle = () => {
     setIsOpen(!isOpen);
   }
 

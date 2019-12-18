@@ -68,7 +68,7 @@ const floatAnimation = keyframes`
 const StyledBlob = styled(Blob)`
 	position: absolute;
 	left: -10%;
-	top: 35%;
+	top: 70%;
 	width: 75rem;
 	height: auto;
 	animation: ${floatAnimation} 8s ease-in-out infinite alternate;
@@ -77,7 +77,7 @@ const StyledBlob = styled(Blob)`
 const StyledBlob2 = styled(Blob2)`
 	position: absolute;
 	right: 5%;
-	top: 30%;
+	top: 20%;
 	width: 50rem;
 	height: auto;
 	animation: ${floatAnimation} 6s ease-in-out infinite alternate;
@@ -177,7 +177,7 @@ const Work = () => {
 				<StyledBlob />
 			</Divider>
 
-			<Divider offset={2} factor={1} speed={-.5} layer={1}>
+			<Divider offset={2} factor={1} speed={-.2} layer={1}>
 				<StyledBlob2 />
 			</Divider>
 
