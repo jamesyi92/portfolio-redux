@@ -5,6 +5,7 @@ import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Work from '../sections/Work';
 import Sandbox from '../sections/Sandbox';
+import Tools from '../sections/Tools';
 
 const IndexPage = ({ parallax }) => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = ({ parallax }) => (
 		  <About />
 		  <Work />
 		  <Sandbox />
+		  <Tools />
 		</Parallax>
   </Layout>
 )
