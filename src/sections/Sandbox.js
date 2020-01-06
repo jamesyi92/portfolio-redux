@@ -8,6 +8,7 @@ import { device } from '../utils/devices';
 import Grid from '../components/Grid';
 import Divider from '../components/Divider';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 
 import SandboxItem from '../components/SandboxItem';
 
@@ -147,7 +148,7 @@ const Sandbox = () => {
 				<Container>
 					<Grid gridCol={1}>
 						<Content>
-							<h2>Sandbox</h2>
+							<Heading>Sandbox</Heading>
 							<p>Just some experimental stuff</p>
 							<Wrap>
                 <OpenButton style={{ ...rest, height, width, backgroundColor}} onClick={() => set(open => true)}>

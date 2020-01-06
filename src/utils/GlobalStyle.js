@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
 
-    font-size: 50%;
+    font-size: 46%;
 
     @media ${device.lg} { 
         font-size: 52.5%;

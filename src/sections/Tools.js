@@ -20,6 +20,7 @@ import Blob2 from '../images/blob-4.inline.svg';
 import Grid from '../components/Grid';
 import Divider from '../components/Divider';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 
 const icons = [
 	{
@@ -89,11 +90,6 @@ const StyledBlob2 = styled(Blob2)`
   }
 `
 
-const StyledH2 = styled.h2`
-	text-align: center;
-	margin-bottom: 4.5rem;
-`
-
 const ToolsGrid = styled(Grid)`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -141,7 +137,7 @@ const Tools = () => {
 
 			<Divider offset={4} factor={1} speed={1} layer={2}>
 				<Container>
-					<StyledH2>Here Are Some Tools I'm Familiar With</StyledH2>
+					<Heading center={true}>Here Are Some Tools I'm Familiar With</Heading>
 					<ToolsGrid>
 						{
 							icons.map((icon, index) => {

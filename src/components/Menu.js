@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import { useTransition, useSpring, useChain, config, animated } from 'react-spring'
+import { useTransition, useSpring, useChain, config, animated } from 'react-spring';
+import { device } from '../utils/devices';
 
 const NavButton = styled.div`
   position: fixed;
@@ -74,12 +75,20 @@ const Nav = styled(animated.nav)`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 50%;
   background: #ffffff;
   right: 0;
   top: 0;
   box-shadow: 0 0 2rem rgba(0,0,0,.1);
   z-index: 998;
+  width: 100%;
+
+  @media ${device.md} { 
+    width: 80%
+  }
+
+  @media ${device.lg} { 
+    width: 50%
+  }
 `
 
 const NavGrid = styled.div`

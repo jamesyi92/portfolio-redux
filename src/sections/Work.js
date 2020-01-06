@@ -8,6 +8,7 @@ import Grid from '../components/Grid';
 import Divider from '../components/Divider';
 import Container from '../components/Container';
 import WorkItem from '../components/WorkItem';
+import Heading from '../components/Heading';
 
 import Phone from '../images/phone-2.inline.svg';
 import Blob from '../images/blob.inline.svg';
@@ -44,12 +45,6 @@ const WorkGrid = styled.div`
 `
 
 const Intro = styled.div`
-
-	h2 {
-		font-size: 4.2rem;
-		margin-bottom: 2.4rem;
-	}
-
 	p {
 		font-size: 1.8rem;
 		margin-bottom: 3rem;
@@ -72,6 +67,10 @@ const StyledBlob = styled(Blob)`
 	width: 75rem;
 	height: auto;
 	animation: ${floatAnimation} 8s ease-in-out infinite alternate;
+	display: none;
+	@media ${device.lg} { 
+    display: block;
+  }
 `
 
 const StyledBlob2 = styled(Blob2)`
@@ -81,6 +80,10 @@ const StyledBlob2 = styled(Blob2)`
 	width: 50rem;
 	height: auto;
 	animation: ${floatAnimation} 6s ease-in-out infinite alternate;
+	display: none;
+	@media ${device.lg} { 
+    display: block;
+  }
 `
 
 const Work = () => {
@@ -184,7 +187,7 @@ const Work = () => {
 			<Divider offset={2} factor={1} speed={.8} layer={3}>
 				<Container>
 					<Intro>
-						<h2>My Work</h2>
+						<Heading>My Work</Heading>
 						<p>Here are a few recent projects</p>
 					</Intro>
 					<WorkGrid>

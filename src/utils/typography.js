@@ -23,7 +23,8 @@ const typography = new Typography({
       'fontSize': '7.2rem'
     },
     'h2': {
-      'fontSize': '4.2rem',
+      'fontSize': '3.6rem',
+      'lineHeight': '1.3'
     },
     'h3': {
       'fontSize': '2.4rem'

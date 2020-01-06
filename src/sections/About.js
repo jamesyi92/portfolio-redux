@@ -8,6 +8,7 @@ import { device } from '../utils/devices';
 import Grid from '../components/Grid';
 import Divider from '../components/Divider';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 
 import Wave1 from '../images/wave-1.inline.svg';
 import Wave2 from '../images/wave-2.inline.svg';
@@ -110,7 +111,7 @@ const About = () => {
 					<Grid gridCol={1}>
 						<Content>
 							<ProfileImage fluid={data.aboutImage.childImageSharp.fluid} />
-							<h2>Hi, I'm James</h2>
+							<Heading center={true}>Hi, I'm James</Heading>
 							<p>I'm a front-end developer based in Vancouver. I have been in the industry for over 4 years of building custom-tailored digital experiences for companies with technologies like WordPress, React and Gatsby. I live and breathe HTML/CSS/Javascript, with having a fierce passion of bringing UI/UX concepts to life.</p>
 						</Content>
 					</Grid>
