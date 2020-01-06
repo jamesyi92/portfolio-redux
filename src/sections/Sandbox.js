@@ -141,9 +141,9 @@ const Sandbox = () => {
 
 	return (
 		<section>
-			<Bg offset={3} factor={1} speed={.3} />
+			<Bg offset={3} factor={1} speed={.3} layer={2}/>
 
-			<Divider offset={3} factor={1} speed={.8} layer={2}>
+			<Divider offset={3} factor={1} speed={.8} layer={3}>
 				<Container>
 					<Grid gridCol={1}>
 						<Content>
