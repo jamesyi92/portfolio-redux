@@ -6,15 +6,17 @@ import About from '../sections/About';
 import Work from '../sections/Work';
 import Sandbox from '../sections/Sandbox';
 import Tools from '../sections/Tools';
+import Contact from '../sections/Contact';
 
 const IndexPage = ({ parallax }) => (
   <Layout>
-    <Parallax pages={5} ref={ref => (parallax = ref)}>
+    <Parallax pages={6} ref={ref => (parallax = ref)}>
 		  <Hero />
 		  <About />
 		  <Work />
 		  <Sandbox />
 		  <Tools />
+		  <Contact />
 		</Parallax>
   </Layout>
 )

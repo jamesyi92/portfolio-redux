@@ -32,18 +32,18 @@ const NavButton = styled.div`
     &,
     &::before,
     &::after {
-        width: 20px;
-        height: 2px;
-        background-color: #212121;
-        display: inline-block;
-        transition: all ease-in-out .2s;
+      width: 20px;
+      height: 2px;
+      background-color: #212121;
+      display: inline-block;
+      transition: all ease-in-out .2s;
     }
 
     &::before,
     &::after {
-        content: "";
-        position: absolute;
-        left: 0;
+      content: "";
+      position: absolute;
+      left: 0;
     }
 
     &::before { top: -6px; }
