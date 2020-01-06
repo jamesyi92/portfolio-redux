@@ -70,6 +70,10 @@ const StyledBlob = styled(Blob)`
 	width: 75rem;
 	height: auto;
 	animation: ${floatAnimation} 8s ease-in-out infinite alternate;
+	display: none;
+	@media ${device.lg} { 
+    display: block;
+  }
 `
 
 const StyledBlob2 = styled(Blob2)`
@@ -79,6 +83,10 @@ const StyledBlob2 = styled(Blob2)`
 	width: 50rem;
 	height: auto;
 	animation: ${floatAnimation} 6s ease-in-out infinite alternate;
+	display: none;
+	@media ${device.lg} { 
+    display: block;
+  }
 `
 
 const StyledH2 = styled.h2`
@@ -90,17 +98,26 @@ const ToolsGrid = styled(Grid)`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 
-	@media ${device.lg} { 
+	@media ${device.md} { 
      grid-template-columns: repeat(5, 1fr);
+     grid-gap: 1rem;
   }
+
 `
 
 const LogoBox = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 3rem 5em;
+	padding: 2rem 7rem;
 
+	@media ${device.md} { 
+    padding: 2rem 4em;
+  }
+	
+	@media ${device.lg} { 
+    padding: 3rem 5em;
+  }
 
 	svg {
 		max-width: 100%;

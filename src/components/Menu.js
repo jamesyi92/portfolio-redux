@@ -75,9 +75,10 @@ const Nav = styled(animated.nav)`
   justify-content: center;
   height: 100%;
   width: 50%;
-  background: #f2f2f2;
+  background: #ffffff;
   right: 0;
   top: 0;
+  box-shadow: 0 0 2rem rgba(0,0,0,.1);
   z-index: 998;
 `
 
