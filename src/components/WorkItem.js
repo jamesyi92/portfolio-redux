@@ -119,7 +119,7 @@ const WorkItem = ({ title, description, logo, img, background }) => {
 			<Overlay>
 				<h3>{ title }</h3>
 				<p>{ description }</p>
-				<Button dark="true">See Details</Button>
+				<Button>See Details</Button>
 			</Overlay>
 			{ logo }
 			<StyledImg fluid={ img } />

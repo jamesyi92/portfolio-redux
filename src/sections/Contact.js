@@ -9,12 +9,12 @@ import Grid from '../components/Grid';
 import Divider from '../components/Divider';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
+import Button from '../components/Button';
 
-import Wave1 from '../images/wave-1.inline.svg';
-import Wave2 from '../images/wave-2.inline.svg';
+import FooterWave from '../images/footer-wave.inline.svg';
 
 
-const animateWave2 = keyframes`
+const animateFooterWave = keyframes`
 	0% {
     transform: scale(1, .8);
   }
@@ -25,14 +25,14 @@ const animateWave2 = keyframes`
 
 
 
-const StyledWave2 = styled(Wave2)`
+const StyledFooterWave = styled(FooterWave)`
 	position: absolute;
 	max-width: 100%;
 	width: 100%;
 	bottom: -4rem;
-	opacity: 1;
+	opacity: .2;
 	transform-origin: bottom;
-	animation: ${animateWave2} 8s ease-in-out -8s infinite alternate forwards running;
+	animation: ${animateFooterWave} 8s ease-in-out -8s infinite alternate forwards running;
 `
 
 const Bg = styled(ParallaxLayer)`
@@ -57,6 +57,17 @@ const Content = styled.div`
 	}
 `
 
+const ButtonWrap = styled.div`
+	
+	margin-top: 3rem;
+
+	${Button} {
+		&:first-child {
+			margin-right: 1.5rem;
+		}
+	}
+`
+
 const Contact = () => {
 
 	return(
@@ -64,7 +75,7 @@ const Contact = () => {
 			<Bg offset={5} factor={1} speed={.3} />
 
 			<Divider offset={5} factor={1} speed={.3} layer={2}>
-				<StyledWave2 />
+				<StyledFooterWave />
 			</Divider>
 
 			<Divider offset={5} factor={1} speed={.8} layer={6}>
@@ -72,7 +83,11 @@ const Contact = () => {
 					<Grid gridCol={1}>
 						<Content>
 							<Heading center={true}>Want to collaborate? Give me a shout!</Heading>
-							<p>I'm a front-end developer based in Vancouver. I have been in the industry for over 4 years of building custom-tailored digital experiences for companies with technologies like WordPress, React and Gatsby. I live and breathe HTML/CSS/Javascript, with having a fierce passion of bringing UI/UX concepts to life.</p>
+							<p>We can accomplish anything if we put our minds together. Let's have a chat! Coffee is on me.</p>
+							<ButtonWrap>
+								<Button dark={true} large={true}>Email Me</Button>
+								<Button dark={true} large={true}>See Resume</Button>
+							</ButtonWrap>
 						</Content>
 					</Grid>
 				</Container>
